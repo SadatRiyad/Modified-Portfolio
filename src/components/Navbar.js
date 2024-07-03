@@ -36,7 +36,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <div style={{ fontWeight: "bolder" }} className="title">Sadat Riyad</div>
+          <div style={{ fontWeight: "bolder", color: "#c770f0"}} className="title">Sadat Riyad .</div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
