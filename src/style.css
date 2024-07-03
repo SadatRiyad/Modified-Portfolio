@@ -307,7 +307,7 @@ button:focus {
 
 .myAvtar {
   justify-content: center !important;
-  padding-top: 9em !important;
+  padding-top: 13em !important;
 }
 
 @media (max-width: 767px) {
@@ -315,6 +315,10 @@ button:focus {
     padding-top: 2em !important;
     padding-bottom: 2em !important;
   }
+}
+
+.myImg{
+  border: 8px solid purple;
 }
 
 .home-about-section {
@@ -331,7 +335,7 @@ button:focus {
 }
 
 .home-about-body {
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: 1.2em !important;
   text-align: left;
 }
@@ -339,6 +343,7 @@ button:focus {
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
+  margin-bottom: 10px;
   color: white !important;
 }
 
@@ -355,6 +360,7 @@ button:focus {
   display: inline-block !important;
   width: 40px !important;
   height: 40px !important;
+  margin-bottom: 15px;
   text-align: center !important;
   font-size: 1.2em !important;
   line-height: 2em !important;
