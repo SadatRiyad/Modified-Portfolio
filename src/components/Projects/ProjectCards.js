@@ -6,11 +6,11 @@ import { BsGithub } from "react-icons/bs";
 
 function ProjectCards(props) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+    <Card className="project-card-view" style={{border:"2px solid purple"}}>
+      <Card.Img variant="top" src={props.imgPath} alt="card-img" style={{borderBottom:"2px solid purple", marginBottom:"10px"}}/>
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+        <Card.Title style={{color:"purple", fontWeight:"bold", marginBottom:"10px"}}>{props.title}</Card.Title>
+        <Card.Text style={{ textAlign: "justify", marginBottom:"15px", }}>
           {props.description}
         </Card.Text>
         <Button variant="primary" href={props.ghLink} target="_blank">
