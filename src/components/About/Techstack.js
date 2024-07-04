@@ -6,9 +6,7 @@ import {
   DiReact,
   DiNodejs,
   DiMongodb,
-  DiPython,
   DiGit,
-  DiJava,
   DiHtml5,
   DiCss3,
   DiBootstrap,
@@ -18,7 +16,6 @@ import {
 } from "react-icons/di";
 import {
   SiFirebase,
-  SiPostgresql,
   SiTailwindcss,
   SiShopify,
   SiGithub,
