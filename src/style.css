@@ -187,9 +187,17 @@ button:focus {
   z-index: 1;
 }
 
-.navbar-nav .nav-item a::after {
+.navbar-nav .nav-link {
+  color: #000; /* Default color */
+}
+
+.navbar-nav .nav-link.active {
+  color: #c770f0 !important; /* Active color */
+}
+
+.navbar-nav .nav-item .nav-link::after {
   content: "";
-  position: relative;
+  position: absolute;
   display: block;
   height: 5px;
   width: 0;
@@ -201,9 +209,10 @@ button:focus {
   transition: all 0.3s ease-out 0s;
 }
 
-.navbar-nav .nav-item a:hover::after {
+.navbar-nav .nav-item .nav-link:hover::after {
   width: 100%;
 }
+
 
 /* --------- */
 /* Home section */
@@ -271,12 +280,12 @@ button:focus {
 }
 
 .heading {
-  font-size: 2.4em !important;
+  font-size: 2.2em !important;
   padding-left: 50px !important;
 }
 
 .heading-name {
-  font-size: 2.5em !important;
+  font-size: 2.4em !important;
   padding-left: 45px !important;
 }
 
@@ -285,12 +294,12 @@ button:focus {
 }
 
 .Typewriter__wrapper {
-  font-size: 2.2em !important;
+  font-size: 2.1em !important;
   color: #be6adf !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
-  font-size: 2.4em !important;
+  font-size: 2.3em !important;
   color: #b562d6 !important;
 }
 
@@ -323,27 +332,27 @@ button:focus {
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-bottom: 0px !important;
+  padding-top: 60px !important;
 }
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
+  padding-top: 80px !important;
   padding-bottom: 20px !important;
   text-align: center;
 }
 
 .home-about-body {
   padding-top: 30px;
-  font-size: 1.2em !important;
+  font-size: 1.1em !important;
   text-align: left;
 }
 
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   color: white !important;
 }
 
@@ -398,6 +407,10 @@ button:focus {
   display: inline-block !important;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.footer .footer-body a:hover{
+  color: #cd5ff8 !important;
 }
 
 .icon-colour {

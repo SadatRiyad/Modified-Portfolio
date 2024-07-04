@@ -3,19 +3,20 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { useNavigate, useLocation, NavLink } from "react-router-dom";
 import { ImGithub } from "react-icons/im";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
+import { CgFileDocument, CgMail } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -27,6 +28,25 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
+  const handleContactClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scrollToContact();
+      }, 100); 
+    } else {
+      scrollToContact();
+    }
+    updateExpanded(false);
+  };
+
+  function scrollToContact() {
+    const contactElement = document.getElementById("contact");
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <Navbar
       expanded={expand}
@@ -36,7 +56,12 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <div style={{ fontWeight: "bolder", color: "#c770f0"}} className="title">Sadat Riyad .</div>
+          <div
+            style={{ fontWeight: "bolder", color: "#c770f0" }}
+            className="title"
+          >
+            Sadat Riyad .
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -49,55 +74,63 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="navbar-nav ms-auto" defaultActiveKey="#home">
+
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <NavLink
+                exact="true"
+                to="/"
+                onClick={() => updateExpanded(false)}
+                className="nav-link"
+                activeclassname="active"
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
+              </NavLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
+              <NavLink
                 to="/about"
                 onClick={() => updateExpanded(false)}
+                className="nav-link"
+                activeclassname="active"
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
+              </NavLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
+              <NavLink
                 to="/project"
                 onClick={() => updateExpanded(false)}
+                className="nav-link"
+                activeclassname="active"
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
+              </NavLink>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
+              <NavLink
                 to="/resume"
                 onClick={() => updateExpanded(false)}
+                className="nav-link"
+                activeclassname="active"
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
+              </NavLink>
             </Nav.Item>
 
-            {/* <Nav.Item>
+
+            <Nav.Item>
               <Nav.Link
-                href="https://sadatriyad.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
+                as="span"
+                onClick={handleContactClick}
+                style={{ cursor: "pointer", position: "relative" }}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+                <CgMail style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
