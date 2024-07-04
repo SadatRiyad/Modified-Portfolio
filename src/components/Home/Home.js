@@ -4,6 +4,7 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import ContactForm from "./ContactForm";
 
 function Home() {
   return (
@@ -25,11 +26,10 @@ function Home() {
                 <strong className="main-name"> SADAT RIYAD</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left", paddingTop: 40,}}>
+              <div style={{ padding: 50, textAlign: "left", paddingTop: 40 }}>
                 <Type />
               </div>
             </Col>
-
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
@@ -42,6 +42,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <ContactForm />
     </section>
   );
 }

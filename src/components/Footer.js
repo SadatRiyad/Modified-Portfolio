@@ -11,7 +11,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright">
           <h3>
-            Portfolio Developed by <b className="purple">Sadat Riyad .</b>
+            Portfolio Developed by <b className="purple">Sadat Riyad.</b>
           </h3>
         </Col>
         <Col md="4" className="footer-copywright">
