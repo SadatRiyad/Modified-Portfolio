@@ -42,7 +42,7 @@ function AboutCard() {
             </li>
           </ul>
 
-          <div style={{backgroundColor:"purple", padding:"20px 10px 10px", marginTop: "50px", borderRadius:"20px", }}>
+          <div style={{backgroundColor:"#623686", padding:"20px 10px 10px", marginTop: "50px", borderRadius:"20px", }}>
             <p>
               "Explore deeply, impact profoundly."{" "}
             </p>
